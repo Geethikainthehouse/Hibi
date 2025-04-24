@@ -85,7 +85,7 @@ function handlePhaseEnd() {
 
 // Plays a 3-second sound
 function playSound() {
-  const audio = new Audio('assets/break-end.mp3'); // Your audio file here
+  const audio = new Audio('assets/css/break-end.mp3'); // Your audio file here
   audio.play();
   setTimeout(() => {
     audio.pause();
