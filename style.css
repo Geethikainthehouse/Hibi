@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  background: url('assets/bg-placeholder.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NEW: center content in container */
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#timer {
+  font-size: 48px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.button-group button {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffe1e175;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-group button:hover {
+  background-color: #9beaa289;
+}
+
