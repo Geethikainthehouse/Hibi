@@ -11,7 +11,7 @@ html, body {
 
 body {
   font-family: 'Press Start 2P', monospace;
-  background: url('assets/bg-placeholder.jpg') no-repeat center center fixed;
+  background: url('assets/css/bg-placeholder.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
   display: flex;
