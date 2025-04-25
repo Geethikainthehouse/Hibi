@@ -85,10 +85,45 @@ function handlePhaseEnd() {
 
 // Plays a 3-second sound
 function playSound() {
-  const audio = new Audio('assets/css/break-end.mp3'); // Your audio file here
+  const audio = new Audio('assets/break-end.mp3'); // Your audio file here
   audio.play();
   setTimeout(() => {
     audio.pause();
     audio.currentTime = 0;
   }, 3000); // 3 seconds
 }
+
+// Toggle background gallery
+function toggleBgMenu() {
+  const menu = document.getElementById('bg-menu');
+  menu.style.display = menu.style.display === 'grid' ? 'none' : 'grid';
+}
+
+// Change background from gallery
+function changeBackground(imagePath) {
+  document.body.style.background = `url('${imagePath}') no-repeat center center fixed`;
+  document.body.style.backgroundSize = 'cover';
+  toggleBgMenu(); // hide the menu after selecting
+}
+
+// Handle custom image upload
+function handleCustomImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const imageUrl = e.target.result;
+    changeBackground(imageUrl); // Use the data URL as background
+  };
+  reader.readAsDataURL(file);
+}
+
+// Attach upload listener
+document.addEventListener("DOMContentLoaded", () => {
+  const uploadInput = document.getElementById("upload-bg");
+  if (uploadInput) {
+    uploadInput.addEventListener("change", handleCustomBgUpload);
+  }
+});
+
