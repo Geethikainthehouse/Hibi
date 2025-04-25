@@ -85,7 +85,7 @@ function handlePhaseEnd() {
 
 // Plays a 3-second sound
 function playSound() {
-  const audio = new Audio('assets/break-end.mp3'); // Your audio file here
+  const audio = new Audio('assets/css/break-end.mp3'); // Your audio file here
   audio.play();
   setTimeout(() => {
     audio.pause();
@@ -101,7 +101,8 @@ function toggleBgMenu() {
 
 // Change background from gallery
 function changeBackground(imagePath) {
-  document.body.style.background = `url('${imagePath}') no-repeat center center fixed`;
+  const fullPath = `assets/css/${imagePath}`;
+  document.body.style.background = `url('${fullPath}') no-repeat center center fixed`;
   document.body.style.backgroundSize = 'cover';
   toggleBgMenu(); // hide the menu after selecting
 }
@@ -114,7 +115,9 @@ function handleCustomImage(event) {
   const reader = new FileReader();
   reader.onload = function(e) {
     const imageUrl = e.target.result;
-    changeBackground(imageUrl); // Use the data URL as background
+    document.body.style.background = `url('${imageUrl}') no-repeat center center fixed`;
+    document.body.style.backgroundSize = 'cover';
+    toggleBgMenu(); // hide the menu after selecting
   };
   reader.readAsDataURL(file);
 }
