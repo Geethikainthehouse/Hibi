@@ -115,9 +115,7 @@ function handleCustomImage(event) {
   const reader = new FileReader();
   reader.onload = function(e) {
     const imageUrl = e.target.result;
-    document.body.style.background = `url('${imageUrl}') no-repeat center center fixed`;
-    document.body.style.backgroundSize = 'cover';
-    toggleBgMenu(); // hide the menu after selecting
+    changeBackground(imageUrl); // Use the data URL as background
   };
   reader.readAsDataURL(file);
 }
