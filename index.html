@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hibi Timer</title>
+  <title>Pixel Pomodoro</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Translucent greyish container -->
   <div class="container">
     <h1 id="phaseTitle">Work</h1>
     <div id="timer">25:00</div>
@@ -18,7 +19,30 @@
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <!-- Bottom-right floating button -->
+  <div class="bg-button" onclick="toggleBgMenu()">🎨</div>
+
+  <!-- Background menu (hidden by default) -->
+  <div id="bg-menu" class="bg-menu hidden">
+    <label class="upload-label">
+      Upload image
+      <input type="file" accept="image/*" onchange="handleCustomImage(event)">
+    </label>
+    <div class="bg-thumbnails">
+      <img src="assets/bg1.jpg" onclick="changeBackground('assets/bg1.jpg')">
+      <img src="assets/bg2.jpg" onclick="changeBackground('assets/bg2.jpg')">
+      <img src="assets/bg3.jpg" onclick="changeBackground('assets/bg3.jpg')">
+      <img src="assets/bg4.jpg" onclick="changeBackground('assets/bg4.jpg')">
+      <img src="assets/bg5.jpg" onclick="changeBackground('assets/bg5.jpg')">
+      <img src="assets/bg6.jpg" onclick="changeBackground('assets/bg6.jpg')">
+      <img src="assets/bg7.jpg" onclick="changeBackground('assets/bg7.jpg')">
+      <img src="assets/bg8.jpg" onclick="changeBackground('assets/bg8.jpg')">
+      <img src="assets/bg9.jpg" onclick="changeBackground('assets/bg9.jpg')">
+      <img src="assets/bg10.jpg" onclick="changeBackground('assets/bg10.jpg')">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
