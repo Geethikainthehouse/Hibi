@@ -101,7 +101,9 @@ function toggleBgMenu() {
 
 // Change background from gallery
 function changeBackground(imagePath) {
-  const fullPath = `assets/css/${imagePath}`;
+  const isDataUrl = imagePath.startsWith("data:");
+  const fullPath = isDataUrl ? imagePath : `assets/css/${imagePath}`;
+
   document.body.style.background = `url('${fullPath}') no-repeat center center fixed`;
   document.body.style.backgroundSize = 'cover';
   toggleBgMenu(); // hide the menu after selecting
